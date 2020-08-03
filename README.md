@@ -14,7 +14,20 @@ pip-install:
 
     python addpagenum.py <pdf filename>
 
-<filename>_pgn.pdf will be created.
+A new PDFfile w/ page numbers, filename_pgn.pdf will be created.
+
+ReportLab's default page size is A4.  If you'd like to change it to, for example, letter, you'll need to modify a little:
+
+    canvas = Canvas(output_file, pagesize=letter)
+
+You can also change these:
+
+    footer_text = f"{page_num}/{len(pages)}"
+    canvas.setFont('Times-Roman', 14)
+    canvas.drawString(290, 10, footer_text)
+
+Note that x=290, y=10 are from bottom-left corner of a page.
+
 
 # Acknowledgement
 I borrowed most of the ideas from this stackoverflow Q&As.

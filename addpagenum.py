@@ -1,4 +1,5 @@
 from reportlab.pdfgen.canvas import Canvas
+from reportlab.lib.pagesizes import letter, A4
 from pdfrw import PdfReader
 from pdfrw.toreportlab import makerl
 from pdfrw.buildxobj import pagexobj
